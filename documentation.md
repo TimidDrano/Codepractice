@@ -4,15 +4,11 @@
 
 - Creating a repo on Gihub with VS code
 - **Almost commited everything inlcluding settings**
-- Git and Github terms and interaction
+- _Git_ and _Github_ terms and interaction
 
 This is a paragraph. Experiment with markdown and use it to create readme on Github.
 
-This is also another paragraph today. We're talking about creating links for example a link to [Google](http://www.google.com)
-
-[Google's](http://www.google.com) image is ![alt text](https://www.google.com/images/logo.gif)
-
-When doing Code on a md:
+When doing Code on md:
 
 ```js
 const prompt = require("prompt-sync")();
