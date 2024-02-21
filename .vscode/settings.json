@@ -1,10 +1,21 @@
 {
+    "launch": {
+    "configurations": [
+      {
+        "name": "JavaScript: Current File",
+        "type": "node",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal"
+      }
+    ]
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.detectIndentation": false,  
   "editor.wordWrap": "on",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
   "terminal.integrated.profiles.windows": {
       "PowerShell": {
           "source": "PowerShell",
@@ -24,15 +35,19 @@
           "args": [],
           "env": {},
           "icon": "terminal-bash"
+      },
+      "Windows PowerShell": {
+        "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
       }
   },
   "code-runner.runInTerminal": true,
+//  "code-runner.clearPreviousOutput": false,
   "code-runner.executorMap": {
     "javascript": "node",
     "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "c": "clear: cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "zig": "zig run",
-    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "clear: cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "php": "php",
     "python": "python -u",
@@ -82,6 +97,4 @@
     "sml": "cd $dir && sml $fileName",
     "mojo": "mojo run"
   },
-  
-   
 }

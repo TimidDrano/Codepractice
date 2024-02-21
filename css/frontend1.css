@@ -1,0 +1,21 @@
+/* Overlay background */
+.overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black bg*/
+    transition: 0.5s; /* Transition effect for sliding in */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the content */
+    text-align: center;
+    color: white;
+}
