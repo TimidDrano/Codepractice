@@ -1,24 +1,14 @@
-// Wait for 3000 milliseconds (3s) and then show the overlay
+// Add an event listener to all anchor elements
 
-/*setTimeout(function (){
-  alert("Hey there");
-}, 3000);
-*/
+const links = document.querySelectorAll("a");
+links.forEach((link) => {
+  link.addEventListener("click", function () {
+    // Apply the active class when clicked
+    this.classList.add("active");
 
-// Function to open the overlay
-/*
-function overlay() {
-    document.getElementById("myOverlay").style.width = "100%";
-}
-*/
-
-const prompt = require('prompt-sync')();
-
-var fname = prompt("Enter your 1st Name:");
-var lname = prompt("Enter your last name:");
-console.log("Your Full Name is:",fname,lname);
-
-/*
-npm install prompt-sync first
-terryanne jumspuit purple s, wrap dress fuchsia M, Coat blue S
-*/
+    // Remove the active class after 2 seconds (adjust as needed)
+    setTimeout(() => {
+      this.classList.remove("active");
+    }, 5000); // 2000 milliseconds = 2 seconds
+  });
+});

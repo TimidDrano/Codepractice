@@ -1,35 +1,44 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 4,
-  "editor.detectIndentation": false,  
+  "editor.detectIndentation": false,
   "editor.wordWrap": "on",
   "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
   "terminal.integrated.profiles.windows": {
-      "PowerShell": {
-          "source": "PowerShell",
-          "icon": "terminal-powershell"
-      },
-      "Command Prompt": {
-          "path": [
-              "${env:windir}\\Sysnative\\cmd.exe",
-              "${env:windir}\\System32\\cmd.exe"
-          ],
-          "args": [],
-          "icon": "terminal-cmd"
-      },
-      "Git Bash": {
-          "source": "Git Bash",
-          "path": "C:\\Program Files\\Git\\bin\\bash.exe",
-          "args": [],
-          "env": {},
-          "icon": "terminal-bash"
-      },
-      "Windows PowerShell": {
-        "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-      }
+    "PowerShell": {
+      "source": "PowerShell",
+      "overrideName": false,
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash",
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": [],
+      "env": {},
+      "icon": "terminal-bash",
+      "overrideName": false,
+      "color": "terminal.ansiBlue"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "color": "terminal.ansiBlue",
+      "overrideName": false,
+      "icon": "terminal-powershell"
+    }
   },
   "code-runner.runInTerminal": true,
+  "code-runner.respectShebang": true,
+  "code-runner.clearPreviousOutput": false,
+  "code-runner.preserveFocus": true,
   "code-runner.executorMap": {
     "javascript": "node",
     "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -85,4 +94,6 @@
     "sml": "cd $dir && sml $fileName",
     "mojo": "mojo run"
   },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
 }

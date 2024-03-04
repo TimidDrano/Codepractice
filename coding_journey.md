@@ -1,3 +1,12 @@
+---
+title:
+date:
+exerpt:
+cover_image:
+category:
+author:
+---
+
 ## You
 
 Can a .accdb file be opened on vs code?
@@ -342,3 +351,135 @@ Certainly! Let’s address your questions:
 
     - Check on and install the .NET Framework SDK (was downloaded)
     - Set-up VS code for running on terminal without opening an extra code terminal... check on stackoverflow on answers to this qn
+
+
+
+
+    __24th Feb 24__
+
+# Solution to vscode extra terminals
+Found a solution to the redundant opening of a new terminal every time I ran my javascript code.
+
+You
+on my vscode, if I have settings.json, do I need to create a launch.json so that I can add in configurations?
+Copilot
+Certainly! Let’s dive into the details.
+
+In Visual Studio Code (VS Code), both settings.json and launch.json serve different purposes:
+
+settings.json:
+This file is used for configuring general settings related to your workspace or user preferences.
+It includes settings like font size, theme, extensions, and other global configurations.
+You can access it by following these steps:
+Click on the gear icon in the lower-left corner (or press Ctrl + ,).
+Select “Settings” from the menu.
+Click on the {} icon in the upper-right corner to open settings.json.
+However, settings.json does not directly handle debugging configurations.
+launch.json:
+This file is specifically used for configuring debugging settings.
+It allows you to define different launch configurations for debugging your code.
+Each configuration specifies how to run and debug your application (e.g., attaching to a process, launching a specific executable, setting breakpoints, etc.).
+You can create multiple configurations for different scenarios (e.g., running a web server, debugging a Node.js app, etc.).
+To create a launch.json file:
+Open the command palette (Ctrl + Shift + P).
+Type “Debug: Open launch.json” and select the option to create a new one.
+Choose the environment (e.g., Node.js, .NET Core, Python) for which you want to configure debugging.
+Customize the configuration settings as needed.
+When to Use Each File:
+If you’re working with a specific programming language or framework that requires custom debugging configurations (e.g., C#, Python, Node.js), you’ll definitely need a launch.json.
+For general workspace settings, use settings.json.
+Common Scenarios:
+If you’re developing a C# application, you’ll likely create a launch.json to specify how to run and debug your C# code.
+If you’re working on other types of projects (e.g., web development), you might still need a launch.json for specific debugging scenarios (e.g., launching a local server, attaching to a running process).
+Remember that launch.json is essential for debugging, while settings.json handles broader workspace settings. Feel free to customize both files according to your needs! 🚀🔍
+
+For more detailed information, you can refer to the official VS Code documentation on configuring debugging1.
+
+Learn more
+1
+code.visualstudio.com
+2
+semicolon.dev
+3
+stackoverflow.com
+4
+code.visualstudio.com
+You
+I did step number 2 and got the configurations below;
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}"
+        }
+    ]
+}
+
+Kindly explain what the type, request, name, skipFiles and program bits mean
+Copilot
+Certainly! Let’s break down the different properties in your launch.json configuration:
+
+version:
+This specifies the version of the debugging configuration format. The value "0.2.0" indicates that you’re using the version 0.2.0 of the format.
+The format may evolve over time, so different versions allow for backward compatibility.
+configurations:
+This is an array of individual debugging configurations. Each configuration represents a specific way to launch and debug your program.
+In your case, you have one configuration defined.
+Configuration Properties:
+Let’s look at the properties within your single configuration:
+type:
+Specifies the type of debugger to use. In your case, it’s set to "node", indicating that you’re configuring Node.js debugging.
+Different languages or frameworks may have their own specific types (e.g., "python", "cpp", etc.).
+request:
+Determines how the debugger should start your program. Common values include:
+"launch": Start a new instance of your program.
+"attach": Attach to an already running process (useful for debugging server applications).
+In your configuration, it’s set to "launch".
+name:
+A user-friendly name for your configuration. When you run the debugger, you’ll see this name in the dropdown menu.
+In your case, it’s named "Launch Program".
+skipFiles:
+An optional property that specifies patterns for files to skip during debugging.
+The value "<node_internals>/**" indicates that the debugger should skip any files within the <node_internals> folder.
+This can be useful to avoid stepping into Node.js internals during debugging.
+program:
+Specifies the entry point of your program (the file you want to debug).
+The value "${file}" is a placeholder that dynamically resolves to the currently open file in your editor.
+Additional Notes:
+You can add more configurations to the configurations array if you need to debug different scenarios (e.g., different files, environments, or launch options).
+Make sure to adjust the properties according to your specific project setup and requirements.
+Remember that launch.json is essential for configuring how your application runs during debugging. Feel free to customize it further based on your needs! 🚀🔍
+
+You
+My program is new1.js so under name can I have it as "name": "Launch new1js",?
+Copilot
+Certainly! You can update the "name" property in your launch.json configuration to make it more descriptive. Here’s how it would look:
+
+JSON
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch new1.js",  // Updated name
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}"
+        }
+    ]
+}
+AI-generated code. Review and use carefully. More info on FAQ.
+Now, when you run the debugger, you’ll see the configuration named “Launch new1.js” in the dropdown menu. Feel free to customize it further based on your preferences! 
