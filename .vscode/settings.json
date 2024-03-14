@@ -1,7 +1,7 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.tabSize": 4,
-  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
   "editor.wordWrap": "on",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
@@ -95,5 +95,7 @@
     "mojo": "mojo run"
   },
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "liveServer.settings.fullReload": true,
+  "files.autoSave": "off"
 }

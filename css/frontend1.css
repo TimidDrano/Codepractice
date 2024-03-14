@@ -38,8 +38,8 @@ body {
   text-transform: capitalize;
   padding: 10px 30px;
   margin: 0 20px;
-  line-height: 80px;
-  transition: 0.5s;
+  line-height: 50px;
+  transition: 1s;
   font-size: 20px;
 }
 
@@ -49,4 +49,41 @@ body {
 
 .link a:active {
   color: #57e2e2;
+}
+
+/* product section */
+
+.product-section.active {
+  position: relative;
+  opacity: 1;
+  z-index: 8;
+}
+
+.product-section {
+  width: 100%;
+  height: 100vh;
+  padding: 0 150px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  transition: 2s; /* added opacity and transition but page behaved differently from tut. wasn't smooth as illustrated*/
+}
+
+.ni10-heading {
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 80px;
+  font-weight: 400;
+}
+
+.product-img {
+  position: absolute;
+  top: 1;
+  right: 0;
+  height: 50vh;
+  width: 50%;
+  object-fit: cover;
+  opacity: 0.2;
 }
